@@ -8,7 +8,7 @@ class Schema:
         database='ethics_ehcid',
         port=5439,
         user='jinru_xue',
-        password='1xbV9EF|diWucciRcXXfUBgjp!LUjY29'
+        password=''
         )
 
         self.cursor=self.conn.cursor()
@@ -44,7 +44,7 @@ class ToDoModel:
         database='ethics_ehcid',
         port=5439,
         user='jinru_xue',
-        password='1xbV9EF|diWucciRcXXfUBgjp!LUjY29'
+        password=''
         )
         self.conn.rollback()
         self.conn.autocommit = True
