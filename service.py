@@ -9,4 +9,4 @@ class ToDoService:
         return 'Success'
     
     def show(self):
-        return self.model.read_tabel()
+        return self.model.read_table()

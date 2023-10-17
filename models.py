@@ -60,7 +60,7 @@ class ToDoModel:
         # uncomment above line and check what error occurs and why
         return 'Success'
    # Similarly add functions to select, delete and update todo
-    def read_tabel(self):
+    def read_table(self):
         self.cursor.execute(f"""select * from {self.TABLENAME}""")
         result: pd.DataFrame = self.cursor.fetch_dataframe()
         return result
