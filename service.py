@@ -10,3 +10,7 @@ class ToDoService:
     
     def show(self):
         return self.model.read_table()
+    
+    def update(self, params):
+        self.model.update_table(params["vendor"], params["df"])
+        return 'Success'

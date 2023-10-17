@@ -8,6 +8,9 @@ from service import ToDoService
 @app.route("/todo", methods=["POST"])
 def create_todo():
     return ToDoService().create(request.get_json())
+@app.route("/todo", methods=["POST"])
+def update_todo():
+    return ToDoService().update(request.get_json())
 @app.route("/todo", methods=("POST", "GET"))
 def print_data():                      
     return render_template('home.html', tables=[ToDoService().show().to_html(classes='data')], titles=ToDoService().show().columns.values)
