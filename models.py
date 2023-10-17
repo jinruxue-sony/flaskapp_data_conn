@@ -65,9 +65,13 @@ class ToDoModel:
         result: pd.DataFrame = self.cursor.fetch_dataframe()
         return result
     
-    def update_table(self, vendor, df):
-        images_ls = tuple(df['images'])
-        images_ls = str(images_ls)
+    def update_table(self, vendor, images_ls):
+        images_ls = tuple(images_ls)
+        if len(images_ls) == 1:
+            images_ls = str(images_ls)
+            images_ls = images_ls.replace(',', '')
+        else:
+            images_ls = str(images_ls)
         update_query = f"""UPDATE fhibe_qa.large_human_splits_expanded_{vendor} SET is_submitted = True
         WHERE images in {images_ls}"""
         self.cursor.execute(update_query)

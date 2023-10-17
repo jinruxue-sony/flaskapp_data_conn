@@ -12,5 +12,5 @@ class ToDoService:
         return self.model.read_table()
     
     def update(self, params):
-        self.model.update_table(params["vendor"], params["df"])
+        self.model.update_table(params["vendor"], params["images_ls"])
         return 'Success'
